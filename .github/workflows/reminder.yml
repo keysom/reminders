@@ -1,0 +1,26 @@
+name: 日期提醒
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC 23:30 = China 07:30
+    - cron: "30 23 * * *"
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: true
+
+      - name: Run reminder
+        run: go run . -config reminders.yml
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}

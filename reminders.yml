@@ -1,0 +1,22 @@
+timezone: Asia/Shanghai
+remind_days: [7, 3, 1, 0]
+always_push: true
+
+reminders:
+  - name: 房租
+    date: "2026-08-01"
+    repeat: monthly
+    remind_days: [3, 1, 0]
+    note: 提前准备转账，顺手检查水电费。
+
+  - name: 会员续费
+    date: "2026-07-20"
+    repeat: once
+    remind_days: [7, 3, 1, 0]
+    note: 不用的话提前取消自动续费。
+
+  - name: 妈妈生日
+    date: "1975-08-12"
+    repeat: yearly
+    remind_days: [14, 7, 1, 0]
+    note: 提前想礼物，当天发祝福。
